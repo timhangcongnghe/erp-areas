@@ -1,0 +1,42 @@
+<%= form_for([erp_areas, :backend, state]) do |f| %>    
+    <%= erp_form_control("text", {
+        name: 'state[name]',
+        value: state.name,                   
+        label: t('.name'),
+        placeholder: t('.enter_state_name'),
+        required: true,
+        errors: state.errors.full_messages_for(:name)
+    }) %>
+    <%= erp_form_control("text", {
+        name: 'state[code]',
+        value: state.code,                   
+        label: t('.code'),
+        placeholder: t('.enter_state_code'),
+        required: true,
+        errors: state.errors.full_messages_for(:code)
+    }) %>
+    <%= erp_form_control("dataselect", {
+        name: 'state[country_id]',
+        value: state.country_id,
+        text: state.country_name,
+        placeholder: t('.choose_country'),
+        label: t('.country'),
+        url: erp_areas.dataselect_backend_countries_path(format: 'json'),
+        create: {
+            url: erp_areas.new_backend_country_path,
+            title: t('.create'),
+            container_selector: '.new_country',
+            input_selector: 'input[name="country[name]"]'
+        },
+        required: true,
+        errors: state.errors.full_messages_for(:country_id)
+    }) %>
+    <hr>
+    <%= erp_component('button/save', {
+        text: t('.submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('.cancel'),
+        href: erp_areas.backend_states_path
+    }) %>
+<% end %>

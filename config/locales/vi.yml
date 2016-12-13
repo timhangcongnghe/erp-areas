@@ -1,0 +1,114 @@
+vi:
+  layouts:
+    erp:
+      backend:
+        sidebar:
+          area: "Khu vực"
+          states: "Tất cả khu vực"
+          countries: "Tất cả quốc gia"
+  erp:
+    areas: 
+      backend:
+        countries:
+          index:
+            countries: "Tất cả quốc gia"
+            create: "Thêm quốc gia"
+            archive: "Ẩn khỏi danh sách"
+            unarchive: "Hiện ra danh sách"
+            delete: "Xóa quốc gia"
+            delete_confirm: "Bạn có chắc muốn xóa?"
+            name: "Tên quốc gia"
+            code: "Mã quốc gia"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+          list:
+            name: "Tên quốc gia"
+            code: "Mã quốc gia"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+            actions: "Thao tác"
+            archived: "Đã ẩn"
+            active: "Đang hiển thị"
+            edit: "Cập nhật"
+            no_matching_records_found: "Danh sách quốc gia hiện tại đang trống."
+          new:
+            countries: "Tất cả quốc gia"
+            create: "Tạo mới quốc gia"
+          edit:
+            countries: "Tất cả quốc gia"
+            edit: "Cập nhật quốc gia"
+          form:
+            name: "Tên quốc gia"
+            enter_country_name: "Nhập tên quốc gia..."
+            code: "Mã quốc gia"
+            enter_country_code: "Nhập mã quốc gia..."
+            submit: "Lưu"
+            cancel: "Hủy"
+        states:
+          index:
+            states: "Tất cả khu vực"
+            create: "Thêm khu vực"
+            archive: "Ẩn khỏi danh sách"
+            unarchive: "Hiện ra danh sách"
+            delete: "Xóa quốc gia"
+            delete_confirm: "Bạn có chắc muốn xóa?"
+            name: "Tên khu vực"
+            code: "Mã khu vực"
+            country: "Quốc gia"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+          list:
+            name: "Tên khu vực"
+            code: "Mã khu vực"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+            actions: "Thao tác"
+            archived: "Đã ẩn"
+            active: "Đang hiển thị"
+            edit: "Cập nhật"
+            no_matching_records_found: "Danh sách khu vực hiện tại đang trống."
+          new:
+            states: "Tất cả khu vực"
+            create: "Tạo mới khu vực"
+          edit:
+            states: "Tất cả khu vực"
+            edit: "Cập nhật khu vực"
+          form:
+            name: "Tên khu vực"
+            enter_state_name: "Nhập tên khu vực..."
+            code: "Mã khu vực"
+            enter_state_code: "Nhập mã khu vực..."
+            country: "Quốc gia"
+            choose_country: "Chọn quốc gia"
+            create: "Tạo mới"
+            submit: "Lưu"
+            cancel: "Hủy"
+  activerecord:
+    errors:
+      models:
+        erp/areas/country:
+          attributes:
+            name:
+              blank: "không được trống."
+            code:
+              blank: "không được trống."
+        erp/areas/state:
+          attributes:
+            name:
+              blank: "không được trống."
+            code:
+              blank: "không được trống."
+            country_id:
+              blank: "không được trống."
+    attributes:
+      erp/areas/country:
+        name: "Tên quốc gia"
+        code: "Mã quốc gia"
+      erp/areas/state:
+        name: "Tên khu vực"
+        code: "Mã khu vực"
+        country_id: "Quốc gia"
