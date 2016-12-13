@@ -36,9 +36,21 @@ module Erp
           @country = Country.new(country_params)
     
           if @country.save
-            redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully created.'
+            if params.to_unsafe_hash['format'] == 'json'
+              render json: {
+                status: 'success',
+                text: @country.name,
+                value: @country.id
+              }
+            else
+              redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully created.'
+            end
           else
-            render :new
+            if params.to_unsafe_hash['format'] == 'json'
+              render '_form', layout: nil, locals: {country: @country}
+            else
+              render :new
+            end            
           end
         end
     
