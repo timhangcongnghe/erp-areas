@@ -36,7 +36,7 @@ module Erp
           @state = State.new(state_params)
     
           if @state.save
-            if params.to_unsafe_hash['format'] == 'json'
+            if request.xhr?
               render json: {
                 status: 'success',
                 text: @state.name,
@@ -46,7 +46,7 @@ module Erp
               redirect_to erp_areas.edit_backend_state_path(@state), notice: 'State was successfully created.'
             end
           else
-            if params.to_unsafe_hash['format'] == 'json'
+            if request.xhr?
               render '_form', layout: nil, locals: {state: @state}
             else
               render :new

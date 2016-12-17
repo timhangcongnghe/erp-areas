@@ -36,7 +36,7 @@ module Erp
           @country = Country.new(country_params)
     
           if @country.save
-            if params.to_unsafe_hash['format'] == 'json'
+            if request.xhr?
               render json: {
                 status: 'success',
                 text: @country.name,
