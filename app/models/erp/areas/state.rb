@@ -32,13 +32,19 @@ module Erp::Areas
     end
     
     # data for dataselect ajax
-    def self.dataselect(keyword='')
+    def self.dataselect(keyword='', params={})
       query = self.all
       
+      # filter by keyword
       if keyword.present?
         keyword = keyword.strip.downcase
         query = query.where('LOWER(name) LIKE ? OR LOWER(code) LIKE ?', "%#{keyword}%", "%#{keyword}%")
       end
+      
+      # filter by parent
+      if params[:parent_value].present?
+				query = query.where(params[:parent_id] => params[:parent_value])
+			end
       
       query = query.limit(8).map{|state| {value: state.id, text: state.name} }
     end
