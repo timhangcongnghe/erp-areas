@@ -57,7 +57,15 @@ module Erp
         # PATCH/PUT /states/1
         def update
           if @state.update(state_params)
-            redirect_to erp_areas.edit_backend_state_path(@state), notice: 'State was successfully updated.'
+            if request.xhr?
+              render json: {
+                status: 'success',
+                text: @state.name,
+                value: @state.id
+              }
+            else
+              redirect_to erp_areas.edit_backend_state_path(@state), notice: 'State was successfully updated.'
+            end            
           else
             render :edit
           end

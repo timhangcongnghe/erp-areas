@@ -57,7 +57,15 @@ module Erp
         # PATCH/PUT /countries/1
         def update
           if @country.update(country_params)
-            redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully updated.'
+            if request.xhr?
+              render json: {
+                status: 'success',
+                text: @country.name,
+                value: @country.id
+              }
+            else
+              redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully updated.'
+            end
           else
             render :edit
           end
