@@ -43,7 +43,7 @@ module Erp
                 value: @country.id
               }
             else
-              redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully created.'
+              redirect_to erp_areas.edit_backend_country_path(@country), notice: t('.success')
             end
           else
             if params.to_unsafe_hash['format'] == 'json'
@@ -64,7 +64,7 @@ module Erp
                 value: @country.id
               }
             else
-              redirect_to erp_areas.edit_backend_country_path(@country), notice: 'Country was successfully updated.'
+              redirect_to erp_areas.edit_backend_country_path(@country), notice: t('.success')
             end
           else
             render :edit
@@ -74,7 +74,7 @@ module Erp
         # DELETE /countries/1
         def destroy
           @country.destroy
-          redirect_to erp_areas.backend_countries_path, notice: 'Country was successfully destroyed.'
+          redirect_to erp_areas.backend_countries_path, notice: t('.success')
         end
         
         # DELETE /countries/delete_all?ids=1,2,3
@@ -84,7 +84,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'Countries were successfully destroyed.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }
@@ -98,7 +98,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'Countries were successfully archived.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }
@@ -112,7 +112,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'Countries were successfully active.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }

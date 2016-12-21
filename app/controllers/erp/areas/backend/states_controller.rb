@@ -43,7 +43,7 @@ module Erp
                 value: @state.id
               }
             else
-              redirect_to erp_areas.edit_backend_state_path(@state), notice: 'State was successfully created.'
+              redirect_to erp_areas.edit_backend_state_path(@state), notice: t('.success')
             end
           else
             if request.xhr?
@@ -64,7 +64,7 @@ module Erp
                 value: @state.id
               }
             else
-              redirect_to erp_areas.edit_backend_state_path(@state), notice: 'State was successfully updated.'
+              redirect_to erp_areas.edit_backend_state_path(@state), notice: t('.success')
             end            
           else
             render :edit
@@ -74,7 +74,7 @@ module Erp
         # DELETE /states/1
         def destroy
           @state.destroy
-          redirect_to erp_areas.backend_states_path, notice: 'State was successfully destroyed.'
+          redirect_to erp_areas.backend_states_path, notice: t('.success')
         end
         
         # DELETE /states/delete_all?ids=1,2,3
@@ -84,7 +84,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'States were successfully destroyed.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }
@@ -98,7 +98,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'States were successfully archived.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }
@@ -112,7 +112,7 @@ module Erp
           respond_to do |format|
             format.json {
               render json: {
-                'message': 'States were successfully active.',
+                'message': t('.success'),
                 'type': 'success'
               }
             }

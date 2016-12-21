@@ -10,6 +10,18 @@ vi:
     areas: 
       backend:
         countries:
+          create:
+            success: "Thêm thông tin quốc gia thành công."
+          update:
+            success: "Cập nhật thông tin quốc gia thành công."
+          destroy:
+            success: "Xóa thông tin quốc gia thành công."
+          delete_all:
+            success: "Xóa thông tin quốc gia được chọn thành công."
+          archive_all:
+            success: "Ẩn thông tin quốc gia được chọn thành công."
+          unarchive_all:
+            success: "Hiện thông tin quốc gia được chọn thành công."
           index:
             countries: "Tất cả quốc gia"
             create: "Thêm quốc gia"
@@ -47,6 +59,18 @@ vi:
             submit: "Lưu"
             cancel: "Hủy"
         states:
+          create:
+            success: "Thêm thông tin khu vực thành công."
+          update:
+            success: "Cập nhật thông tin khu vực thành công."
+          destroy:
+            success: "Xóa thông tin khu vực thành công."
+          delete_all:
+            success: "Xóa thông tin khu vực được chọn thành công."
+          archive_all:
+            success: "Ẩn thông tin khu vực được chọn thành công."
+          unarchive_all:
+            success: "Hiện thông tin khu vực được chọn thành công."
           index:
             states: "Tất cả khu vực"
             create: "Thêm khu vực"
