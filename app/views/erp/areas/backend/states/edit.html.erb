@@ -5,14 +5,15 @@
 <% content_for :page_title do %>    
     <a href="<%= erp_areas.backend_states_path %>">
     <i class="fa fa-users"></i> <%= t('.states') %>
-    </a> / <%= t('.edit') %>
+    </a> / <%= @state.name %>
 <% end %>
 
 <% content_for :page_toolbar do %>
-    <div class="btn-group">
-        <div class="clearfix">
-        </div>
-    </div>
+    <%= erp_component('button/create', {
+        text: t('.create'),
+        href: erp_areas.new_backend_state_path,
+        class: 'btn-sm'
+    }) %>
 <% end %>
 
 <div class="row">

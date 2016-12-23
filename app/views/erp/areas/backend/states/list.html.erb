@@ -40,7 +40,7 @@
                         <%= erp_datalist_check_row(id: state.id) %>
                     </td>
                     <% if get_columns(params).include?("name") %>
-                        <td><%= link_to state.name, erp_areas.edit_backend_state_path(state) %></td>
+                        <td><%= link_to state.country.name + " >> " + state.name, erp_areas.edit_backend_state_path(state) %></td>
                     <% end %>
                     <% if get_columns(params).include?("code") %>
                         <td><%= state.code %></td>
@@ -58,7 +58,7 @@
                         <td></td>
                     <% end %>
                     <% if get_columns(params).include?("created_at") %>
-                        <td class="center"><%= state.created_at.strftime("%d/%m/%Y") %></td>
+                        <td><%= state.created_at.strftime("%d/%m/%Y") %></td>
                     <% end %>
                     <td>
                         <%= erp_datalist_row_actions(

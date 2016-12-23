@@ -58,7 +58,7 @@
                         <td></td>
                     <% end %>
                     <% if get_columns(params).include?("created_at") %>
-                        <td class="center"><%= country.created_at.strftime("%d/%m/%Y") %></td>
+                        <td><%= country.created_at.strftime("%d/%m/%Y") %></td>
                     <% end %>
                     <td>
                         <%= erp_datalist_row_actions(

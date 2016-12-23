@@ -42,7 +42,7 @@ vi:
             created_at: "Ngày tạo"
             actions: "Thao tác"
             archived: "Đã ẩn"
-            active: "Đang hiển thị"
+            active: "Hiển thị"
             edit: "Cập nhật"
             no_matching_records_found: "Danh sách quốc gia hiện tại đang trống."
           new:
@@ -92,7 +92,7 @@ vi:
             created_at: "Ngày tạo"
             actions: "Thao tác"
             archived: "Đã ẩn"
-            active: "Đang hiển thị"
+            active: "Hiển thị"
             edit: "Cập nhật"
             no_matching_records_found: "Danh sách khu vực hiện tại đang trống."
           new:

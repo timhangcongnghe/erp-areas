@@ -22,6 +22,14 @@
         },
         {
             text: t('.code'), name: 'code'
+        },
+        {
+            text: t('.country'),
+            name: 'erp_areas_countries.name',
+            select: {
+                name: 'erp_areas_countries.id',
+                data_url: erp_areas.dataselect_backend_countries_path
+            }
         }
     ],
     actions: [
@@ -44,6 +52,11 @@
             data_method: 'DELETE',
             data_confirm: t('.delete_confirm')
         }
+    ],
+    filters: [
+        {
+            text: t('.archived'), name: 'show_archived', value: true, checked: false
+        },
     ],
     columns: [
         {

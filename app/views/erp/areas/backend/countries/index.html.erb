@@ -45,6 +45,11 @@
             data_confirm: t('.delete_confirm')
         }
     ],
+    filters: [
+        {
+            text: t('.archived'), name: 'show_archived', value: true, checked: false
+        },
+    ],
     columns: [
         {
             text: t('.name'), name: 'name', value: true, checked: true
