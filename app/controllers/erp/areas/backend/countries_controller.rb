@@ -4,7 +4,7 @@ module Erp
   module Areas
     module Backend
       class CountriesController < Erp::Backend::BackendController
-        before_action :set_country, only: [:edit, :update, :destroy]
+        before_action :set_country, only: [:archive, :unarchive, :edit, :update, :destroy]
         before_action :set_countries, only: [:delete_all, :archive_all, :unarchive_all]
     
         # GET /countries
@@ -74,7 +74,44 @@ module Erp
         # DELETE /countries/1
         def destroy
           @country.destroy
-          redirect_to erp_areas.backend_countries_path, notice: t('.success')
+          
+          respond_to do |format|
+            format.html { redirect_to erp_areas.backend_countries_path, notice: t('.success') }
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end 
+        end
+        
+        # Archive /countries/archive?id=1
+        def archive      
+          @country.archive
+          
+          respond_to do |format|
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end          
+        end
+        
+        # Unarchive /countries/unarchive?id=1
+        def unarchive
+          @country.unarchive
+          
+          respond_to do |format|
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end          
         end
         
         # DELETE /countries/delete_all?ids=1,2,3

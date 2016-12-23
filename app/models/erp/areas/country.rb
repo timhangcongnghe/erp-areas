@@ -73,6 +73,14 @@ module Erp::Areas
       query = query.limit(8).map{|country| {value: country.id, text: country.name} }
     end
     
+    def archive
+			update_columns(archived: true)
+		end
+    
+    def unarchive
+			update_columns(archived: false)
+		end
+    
     def self.archive_all
 			update_all(archived: true)
 		end

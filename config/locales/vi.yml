@@ -35,6 +35,8 @@ vi:
             creator: "Người tạo"
             created_at: "Ngày tạo"
           list:
+            delete: "Xóa quốc gia"
+            delete_confirm: "Bạn có chắc muốn xóa?"
             name: "Tên quốc gia"
             code: "Mã quốc gia"
             status: "Trạng thái"
@@ -85,6 +87,8 @@ vi:
             creator: "Người tạo"
             created_at: "Ngày tạo"
           list:
+            delete: "Xóa khu vực"
+            delete_confirm: "Bạn có chắc muốn xóa?"
             name: "Tên khu vực"
             code: "Mã khu vực"
             status: "Trạng thái"

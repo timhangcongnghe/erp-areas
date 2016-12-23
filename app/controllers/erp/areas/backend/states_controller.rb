@@ -76,6 +76,7 @@ module Erp
           @state.destroy
           
           respond_to do |format|
+            format.html { redirect_to erp_areas.backend_states_path, notice: t('.success') }
             format.json {
               render json: {
                 'message': t('.success'),
@@ -87,7 +88,7 @@ module Erp
         
         # Archive /states/archive?id=1
         def archive      
-          @states.archive
+          @state.archive
           
           respond_to do |format|
             format.json {
@@ -101,7 +102,7 @@ module Erp
         
         # Unarchive /states/unarchive?id=1
         def unarchive
-          @states.unarchive
+          @state.unarchive
           
           respond_to do |format|
             format.json {

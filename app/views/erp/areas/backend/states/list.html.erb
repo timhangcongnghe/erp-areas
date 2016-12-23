@@ -70,20 +70,23 @@
                                 {
                                     text: '<i class="fa fa-eye-slash"></i> '+t('.archive'),
                                     url: erp_areas.archive_backend_states_path(id: state.id),
-                                    data_method: 'PUT'
+                                    data_method: 'PUT',
+                                    class: 'ajax-link'
                                 },
                                 {
                                     text: '<i class="fa fa-eye"></i> '+t('.unarchive'),
                                     url: erp_areas.unarchive_backend_states_path(id: state.id),
-                                    data_method: 'PUT'
+                                    data_method: 'PUT',
+                                    class: 'ajax-link'
                                 },
                                 {
                                     divider: true
                                 },
                                 {
                                     text: '<i class="fa fa-trash"></i> '+t('.delete'),
-                                    url: erp_areas.backend_states_path(state),
+                                    url: erp_areas.backend_state_path(state),
                                     data_method: 'DELETE',
+                                    class: 'ajax-link',
                                     data_confirm: t('.delete_confirm')
                                 }
                             ]
