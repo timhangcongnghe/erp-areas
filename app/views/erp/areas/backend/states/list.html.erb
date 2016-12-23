@@ -6,12 +6,12 @@
                     <%= erp_datalist_check_all %>
                 </th>
                 <% if get_columns(params).include?("name") %>
-                    <th>
+                    <th class="sortable" sort-by='erp_areas_states.name'>
                         <%= t('.name') %>
                     </th>
                 <% end %>
                 <% if get_columns(params).include?("code") %>
-                    <th>
+                    <th class="sortable" sort-by='erp_areas_states.code'>
                         <%= t('.code') %>
                     </th>
                 <% end %>
@@ -65,7 +65,26 @@
                             [
                                 {
                                     text: '<i class="fa fa-edit"></i> '+t('.edit'),
-                                    href: erp_areas.edit_backend_state_path(state)
+                                    url: erp_areas.edit_backend_state_path(state)
+                                },
+                                {
+                                    text: '<i class="fa fa-eye-slash"></i> '+t('.archive'),
+                                    url: erp_areas.archive_backend_states_path(id: state.id),
+                                    data_method: 'PUT'
+                                },
+                                {
+                                    text: '<i class="fa fa-eye"></i> '+t('.unarchive'),
+                                    url: erp_areas.unarchive_backend_states_path(id: state.id),
+                                    data_method: 'PUT'
+                                },
+                                {
+                                    divider: true
+                                },
+                                {
+                                    text: '<i class="fa fa-trash"></i> '+t('.delete'),
+                                    url: erp_areas.backend_states_path(state),
+                                    data_method: 'DELETE',
+                                    data_confirm: t('.delete_confirm')
                                 }
                             ]
                         ) %>

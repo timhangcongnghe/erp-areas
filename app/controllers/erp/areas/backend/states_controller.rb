@@ -4,7 +4,7 @@ module Erp
   module Areas
     module Backend
       class StatesController < Erp::Backend::BackendController
-        before_action :set_state, only: [:edit, :update, :destroy]
+        before_action :set_state, only: [:archive, :unarchive, :edit, :update, :destroy]
         before_action :set_states, only: [:delete_all, :archive_all, :unarchive_all]
         
         # GET /states
@@ -74,7 +74,43 @@ module Erp
         # DELETE /states/1
         def destroy
           @state.destroy
-          redirect_to erp_areas.backend_states_path, notice: t('.success')
+          
+          respond_to do |format|
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end 
+        end
+        
+        # Archive /states/archive?id=1
+        def archive      
+          @states.archive
+          
+          respond_to do |format|
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end          
+        end
+        
+        # Unarchive /states/unarchive?id=1
+        def unarchive
+          @states.unarchive
+          
+          respond_to do |format|
+            format.json {
+              render json: {
+                'message': t('.success'),
+                'type': 'success'
+              }
+            }
+          end          
         end
         
         # DELETE /states/delete_all?ids=1,2,3
@@ -91,7 +127,7 @@ module Erp
           end          
         end
         
-        # Archive /states/archive_all?ids=1,2,3
+        # Archive all /states/archive_all?ids=1,2,3
         def archive_all         
           @states.archive_all
           
@@ -105,7 +141,7 @@ module Erp
           end          
         end
         
-        # Unarchive /states/unarchive_all?ids=1,2,3
+        # Unarchive all /states/unarchive_all?ids=1,2,3
         def unarchive_all
           @states.unarchive_all
           
