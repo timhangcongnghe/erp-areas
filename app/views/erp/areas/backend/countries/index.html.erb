@@ -3,14 +3,14 @@
 <% end %>
 
 <% content_for :page_title do %>
-    <i class="fa fa-bookmark-o"></i> <%= t('.countries') %>
+    <i class="fa fa-flag-checkered"></i> <%= t('.countries') %>
 <% end %>
 
 <% content_for :page_toolbar do %>
     <%= erp_component('button/create', {
         text: t('.create'),
         href: erp_areas.new_backend_country_path,
-        class: 'btn-sm'
+        class: 'btn-noborder'
     }) %>
 <% end %>
 
