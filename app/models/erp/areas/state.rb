@@ -1,6 +1,6 @@
 module Erp::Areas
   class State < ApplicationRecord
-    belongs_to :country
+    belongs_to :country, dependent: :destroy
     validates :name, :code, :country_id, :presence => true
     
     # Filters

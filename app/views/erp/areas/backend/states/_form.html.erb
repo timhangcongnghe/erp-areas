@@ -3,7 +3,6 @@
         name: 'state[name]',
         value: state.name,                   
         label: t('.name'),
-        placeholder: t('.enter_state_name'),
         required: true,
         errors: state.errors.full_messages_for(:name)
     }) %>
@@ -11,7 +10,6 @@
         name: 'state[code]',
         value: state.code,                   
         label: t('.code'),
-        placeholder: t('.enter_state_code'),
         required: true,
         errors: state.errors.full_messages_for(:code)
     }) %>
@@ -33,10 +31,10 @@
     }) %>
     <hr>
     <%= erp_component('button/save', {
-        text: t('.submit')
+        text: t('submit')
     }) %>
     <%= erp_component('button/cancel', {
-        text: t('.cancel'),
+        text: t('cancel'),
         href: erp_areas.backend_states_path
     }) %>
 <% end %>

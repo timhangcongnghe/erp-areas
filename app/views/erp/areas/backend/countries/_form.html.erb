@@ -3,7 +3,6 @@
         name: 'country[name]',
         value: country.name,                   
         label: t('.name'),
-        placeholder: t('.enter_country_name'),
         required: true,
         errors: country.errors.full_messages_for(:name)
     }) %>
@@ -11,16 +10,15 @@
         name: 'country[code]',
         value: country.code,                   
         label: t('.code'),
-        placeholder: t('.enter_country_code'),
         required: true,
         errors: country.errors.full_messages_for(:code)
     }) %>
     <hr>
     <%= erp_component('button/save', {
-        text: t('.submit')
+        text: t('submit')
     }) %>
     <%= erp_component('button/cancel', {
-        text: t('.cancel'),
+        text: t('cancel'),
         href: erp_areas.backend_countries_path
     }) %>
 <% end %>

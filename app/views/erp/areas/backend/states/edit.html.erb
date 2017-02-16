@@ -1,5 +1,5 @@
 <% content_for :title do %>
-    <%= t('.edit') %>
+    <%= @state.name %>
 <% end %>
 
 <% content_for :page_title do %>    
@@ -11,8 +11,7 @@
 <% content_for :page_toolbar do %>
     <%= erp_component('button/create', {
         text: t('.create'),
-        href: erp_areas.new_backend_state_path,
-        class: 'btn-sm'
+        href: erp_areas.new_backend_state_path
     }) %>
 <% end %>
 
