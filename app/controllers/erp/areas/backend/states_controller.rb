@@ -1,5 +1,3 @@
-require_dependency "erp/application_controller"
-
 module Erp
   module Areas
     module Backend
@@ -10,10 +8,6 @@ module Erp
         # GET /states
         def index
         end
-    
-        # GET /states/1
-        #def show
-        #end
         
         # POST /states/list
         def list
@@ -86,7 +80,7 @@ module Erp
           end 
         end
         
-        # Archive /states/archive?id=1
+        # ARCHIVE /states/archive?id=1
         def archive      
           @state.archive
           
@@ -100,7 +94,7 @@ module Erp
           end          
         end
         
-        # Unarchive /states/unarchive?id=1
+        # UNARCHIVE /states/unarchive?id=1
         def unarchive
           @state.unarchive
           
@@ -128,7 +122,7 @@ module Erp
           end          
         end
         
-        # Archive all /states/archive_all?ids=1,2,3
+        # ARCHIVE ALL /states/archive_all?ids=1,2,3
         def archive_all         
           @states.archive_all
           
@@ -142,7 +136,7 @@ module Erp
           end          
         end
         
-        # Unarchive all /states/unarchive_all?ids=1,2,3
+        # UNARCHIVE ALL /states/unarchive_all?ids=1,2,3
         def unarchive_all
           @states.unarchive_all
           
@@ -156,6 +150,7 @@ module Erp
           end          
         end
         
+        # DATASELECT
         def dataselect
           respond_to do |format|
             format.json {

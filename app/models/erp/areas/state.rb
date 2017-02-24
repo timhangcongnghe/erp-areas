@@ -84,19 +84,19 @@ module Erp::Areas
     end
     
     def archive
-			update_columns(archived: true)
+			update_attributes(archived: true)
 		end
     
     def unarchive
-			update_columns(archived: false)
+			update_attributes(archived: false)
 		end
     
     def self.archive_all
-			update_all(archived: true)
+			update_all(archived: false)
 		end
     
     def self.unarchive_all
-			update_all(archived: false)
+			update_all(archived: true)
 		end
     
     # country name

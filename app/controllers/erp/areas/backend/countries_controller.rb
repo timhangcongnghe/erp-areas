@@ -1,5 +1,3 @@
-require_dependency "erp/application_controller"
-
 module Erp
   module Areas
     module Backend
@@ -10,10 +8,6 @@ module Erp
         # GET /countries
         def index
         end
-    
-        # GET /countries/1
-        #def show
-        #end
         
         # POST /contacts/list
         def list
@@ -86,7 +80,7 @@ module Erp
           end 
         end
         
-        # Archive /countries/archive?id=1
+        # ARCHIVE /countries/archive?id=1
         def archive      
           @country.archive
           
@@ -100,7 +94,7 @@ module Erp
           end          
         end
         
-        # Unarchive /countries/unarchive?id=1
+        # UNARCHIVE /countries/unarchive?id=1
         def unarchive
           @country.unarchive
           
@@ -114,7 +108,7 @@ module Erp
           end          
         end
         
-        # DELETE /countries/delete_all?ids=1,2,3
+        # DELETE ALL /countries/delete_all?ids=1,2,3
         def delete_all         
           @countries.destroy_all
           
@@ -128,7 +122,7 @@ module Erp
           end          
         end
         
-        # Archive /countries/archive_all?ids=1,2,3
+        # ARCHIVE ALL /countries/archive_all?ids=1,2,3
         def archive_all         
           @countries.archive_all
           
@@ -142,7 +136,7 @@ module Erp
           end          
         end
         
-        # Unarchive /countries/unarchive_all?ids=1,2,3
+        # UNARCHIVE ALL /countries/unarchive_all?ids=1,2,3
         def unarchive_all
           @countries.unarchive_all
           
@@ -156,6 +150,7 @@ module Erp
           end          
         end
         
+        # DATASELECT
         def dataselect
           respond_to do |format|
             format.json {
