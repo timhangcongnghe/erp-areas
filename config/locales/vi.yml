@@ -17,27 +17,30 @@ vi:
           destroy:
             success: "Xóa thông tin quốc gia thành công."
           archive:
-            success: "Ẩn thông tin quốc gia thành công."
+            success: "Thông tin quốc gia đã ngưng sử dụng."
           unarchive:
-            success: "Hiện thông tin quốc gia thành công."
+            success: "Thông tin quốc gia đã được sử dụng trở lại."
           delete_all:
             success: "Xóa thông tin quốc gia được chọn thành công."
           archive_all:
-            success: "Ẩn thông tin quốc gia được chọn thành công."
+            success: "Thông tin quốc gia đã ngưng sử dụng."
           unarchive_all:
-            success: "Hiện thông tin quốc gia được chọn thành công."
+            success: "Thông tin quốc gia đã được sử dụng trở lại."
           index:
             countries: "Tất cả quốc gia"
             create: "Thêm thông tin quốc gia"
             delete: "Xóa thông tin quốc gia"
             name: "Tên quốc gia"
             code: "Mã quốc gia"
-            country_archived: "Thông tin quốc gia đã bị ẩn"
+            archive_confirm: "Bạn chắc chắn muốn ngừng sử dụng thông tin quốc gia này?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại thông tin quốc gia này?"
           list:
             name: "Tên quốc gia"
             code: "Mã quốc gia"
             delete: "Xóa thông tin quốc gia"
             no_matching_records_found: "Danh sách quốc gia hiện tại đang trống."
+            archive_confirm: "Bạn chắc chắn muốn ngừng sử dụng thông tin quốc gia này?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại thông tin quốc gia này?"
           new:
             countries: "Tất cả quốc gia"
             create: "Thêm thông tin quốc gia"
@@ -57,15 +60,15 @@ vi:
           destroy:
             success: "Xóa thông tin khu vực thành công."
           archive:
-            success: "Ẩn thông tin khu vực thành công."
+            success: "Thông tin khu vực đã ngưng sử dụng."
           unarchive:
-            success: "Hiện thông tin khu vực thành công."
+            success: "Thông tin khu vực đã được sử dụng trở lại."
           delete_all:
             success: "Xóa thông tin khu vực được chọn thành công."
           archive_all:
-            success: "Ẩn thông tin khu vực được chọn thành công."
+            success: "Thông tin khu vực đã ngưng sử dụng."
           unarchive_all:
-            success: "Hiện thông tin khu vực được chọn thành công."
+            success: "Thông tin khu vực đã được sử dụng trở lại."
           index:
             states: "Tất cả khu vực"
             create: "Thêm thông tin khu vực"
@@ -73,12 +76,15 @@ vi:
             name: "Tên khu vực"
             code: "Mã khu vực"
             country: "Quốc gia"
-            state_archived: "Thông tin khu vực đã bị ẩn"
+            archive_confirm: "Bạn chắc chắn muốn ngừng sử dụng thông tin khu vực này?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại thông tin khu vực này?"
           list:
             delete: "Xóa thông tin khu vực"
             name: "Tên khu vực"
             code: "Mã khu vực"
             no_matching_records_found: "Danh sách khu vực hiện tại đang trống."
+            archive_confirm: "Bạn chắc chắn muốn ngừng sử dụng thông tin khu vực này?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại thông tin khu vực này?"
           new:
             states: "Tất cả khu vực"
             create: "Thêm thông tin khu vực"

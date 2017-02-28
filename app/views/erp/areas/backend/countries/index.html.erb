@@ -28,12 +28,14 @@
         {
             text: '<i class="fa fa-remove"></i> '+t('archive'),
             url: erp_areas.archive_all_backend_countries_path,
-            data_method: 'PUT'
+            data_method: 'PUT',
+            data_confirm: t('.archive_confirm')
         },
         {
             text: '<i class="fa fa-check"></i> '+t('unarchive'),
             url: erp_areas.unarchive_all_backend_countries_path,
-            data_method: 'PUT'
+            data_method: 'PUT',
+            data_confirm: t('.unarchive_confirm')
         },
         {
             divider: true

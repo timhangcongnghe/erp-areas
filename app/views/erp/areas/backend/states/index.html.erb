@@ -36,12 +36,14 @@
         {
             text: '<i class="fa fa-eye-slash"></i> '+t('archive'),
             url: erp_areas.archive_all_backend_states_path,
-            data_method: 'PUT'
+            data_method: 'PUT',
+            data_confirm: t('.archive_confirm')
         },
         {
             text: '<i class="fa fa-eye"></i> '+t('unarchive'),
             url: erp_areas.unarchive_all_backend_states_path,
-            data_method: 'PUT'
+            data_method: 'PUT',
+            data_confirm: t('.unarchive_confirm')
         },
         {
             divider: true
@@ -55,7 +57,7 @@
     ],
     filters: [
         {
-            text: t('.state_archived'), name: 'show_archived', value: true, checked: false
+            text: t('archived'), name: 'show_archived', value: true, checked: false
         },
     ],
     columns: [

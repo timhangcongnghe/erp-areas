@@ -33,7 +33,7 @@
         </tr>
     </thead>
     <tbody>
-        <% if @countries.each do |country| %>
+        <% @countries.each do |country| %>
             <tr class="odd gradeX">
                 <td>
                     <%= erp_datalist_check_row(id: country.id) %>
@@ -71,14 +71,16 @@
                                 url: erp_areas.archive_backend_countries_path(id: country),
                                 data_method: 'PUT',
                                 hide: country.archived,
-                                class: 'ajax-link'
+                                class: 'ajax-link',
+                                data_confirm: t('.archive_confirm')
                             },
                             {
                                 text: '<i class="fa fa-eye"></i> '+t('unarchive'),
                                 url: erp_areas.unarchive_backend_countries_path(id: country),
                                 data_method: 'PUT',
                                 hide: !country.archived,
-                                class: 'ajax-link'
+                                class: 'ajax-link',
+                                data_confirm: t('.unarchive_confirm')
                             },
                             {
                                 divider: true
@@ -94,83 +96,11 @@
                     ) %>
                 </td>
             </tr>
-<<<<<<< afeb93d3cf47437250a237b7f22f61f4b81536f7
-        </thead>
-        <tbody>
-            <% @countries.each do |country| %>
-                <tr class="odd gradeX">
-                    <td>
-                        <%= erp_datalist_check_row(id: country.id) %>
-                    </td>
-                    <% if get_columns(params).include?("name") %>
-                        <td><%= link_to country.name, erp_areas.edit_backend_country_path(country) %></td>
-                    <% end %>
-                    <% if get_columns(params).include?("code") %>
-                        <td><%= country.code %></td>
-                    <% end %>
-                    <% if get_columns(params).include?("status") %>
-                    <td>
-                        <% if country.archived == true %>
-                        <span class="label label-sm label-danger"><%= t('.archived') %></span>
-                        <% else %>
-                        <span class="label label-sm label-success"><%= t('.active') %></span>
-                        <% end %> 
-                    </td>
-                    <% end %>
-                    <% if get_columns(params).include?("creator") %>
-                        <td></td>
-                    <% end %>
-                    <% if get_columns(params).include?("created_at") %>
-                        <td><%= country.created_at.strftime("%d/%m/%Y") %></td>
-                    <% end %>
-                    <td>
-                        <%= erp_datalist_row_actions(
-                            [
-                                {
-                                    text: '<i class="fa fa-edit"></i> '+t('.edit'),
-                                    href: erp_areas.edit_backend_country_path(country)
-                                },
-                                {
-                                    text: '<i class="fa fa-eye-slash"></i> '+t('.archive'),
-                                    url: erp_areas.archive_backend_countries_path(id: country),
-                                    data_method: 'PUT',
-                                    class: 'ajax-link'
-                                },
-                                {
-                                    text: '<i class="fa fa-eye"></i> '+t('.unarchive'),
-                                    url: erp_areas.unarchive_backend_countries_path(id: country),
-                                    data_method: 'PUT',
-                                    class: 'ajax-link'
-                                },
-                                {
-                                    divider: true
-                                },
-                                {
-                                    text: '<i class="fa fa-trash"></i> '+t('.delete'),
-                                    url: erp_areas.backend_country_path(country),
-                                    data_method: 'DELETE',
-                                    class: 'ajax-link',
-                                    data_confirm: t('.delete_confirm')
-                                }
-                            ]
-                        ) %>
-                    </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-    <% if @countries.empty? %>
-        <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
-    <% end %>
-</div>
-=======
-        <% end.empty? %>
-            <tr>
-                <td colspan="7"><%= t('.no_matching_records_found') %></td>
-            </tr>
         <% end %>
     </tbody>
 </table>
->>>>>>> fix icon and translate
+<% if @countries.empty? %>
+    <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
+<% end %>
         
 <%= erp_datalist_pagination(@countries) %>
