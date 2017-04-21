@@ -105,5 +105,14 @@ module Erp::Areas
 			country.present? ? country.name : ''
 		end
 
+    # get all
+    def self.get_all
+			self.all.order('erp_areas_states.name')
+		end
+
+    # Get all districts
+    def get_districts
+			districts
+		end
   end
 end
