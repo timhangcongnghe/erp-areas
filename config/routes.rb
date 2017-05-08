@@ -23,6 +23,12 @@ Erp::Areas::Engine.routes.draw do
 					put 'unarchive'
 				end
 			end
+			resources :districts do
+				collection do
+					post 'list'
+					get 'dataselect'
+				end
+			end
 		end
 	end
 end
