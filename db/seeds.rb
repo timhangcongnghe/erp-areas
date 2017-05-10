@@ -1,7 +1,7 @@
 Erp::Areas::Country.all.destroy_all
 vn = Erp::Areas::Country.create(
   id: 1,
-  name: "Việt Name",
+  name: "Việt Nam",
   code: "vn"
 )
 vn.save
