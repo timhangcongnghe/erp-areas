@@ -11,7 +11,7 @@ module Erp
         
         # POST /states/list
         def list
-          @states = State.search(params).paginate(:page => params[:page], :per_page => 5)
+          @states = State.search(params).paginate(:page => params[:page], :per_page => 20)
           
           render layout: nil
         end

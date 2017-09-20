@@ -11,7 +11,7 @@ module Erp
         
         # POST /contacts/list
         def list
-          @countries = Country.search(params).paginate(:page => params[:page], :per_page => 5)
+          @countries = Country.search(params).paginate(:page => params[:page], :per_page => 20)
           
           render layout: nil
         end
